@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीराम ग्लास एण्ड एल्युमिनियम वर्क | कानपुर</title>
+<meta name="description" content="श्रीराम ग्लास एण्ड एल्युमिनियम वर्क — बकावाँ रोड़, कानपुर। एल्युमिनियम फ्रेम, ग्लास फिटिंग, दुकान फ्रंट, रेलिंग व पार्टीशन का भरोसेमंद काम।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#171b1f;
+    --charcoal-2:#1f242a;
+    --aluminium:#b9c0c7;
+    --aluminium-dim:#5c646c;
+    --glass:#6fb7c9;
+    --glass-soft:rgba(111,183,201,0.14);
+    --marigold:#e2841f;
+    --marigold-soft:rgba(226,132,31,0.14);
+    --offwhite:#f3f2ee;
+    --paper:#ebeae4;
+    --ink:#14171a;
+    --ink-soft:#4c5359;
+    --radius:2px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--offwhite);
+    color:var(--ink);
+    font-family:'Hind',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Teko',sans-serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+    line-height:1;
+    margin:0;
+  }
+  .mono{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.03em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+  ::selection{background:var(--marigold);color:#14100a;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(23,27,31,0.72);
+    backdrop-filter:blur(10px) saturate(140%);
+    -webkit-backdrop-filter:blur(10px) saturate(140%);
+    border-bottom:1px solid rgba(185,192,199,0.14);
+  }
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--offwhite);}
+  .brand-mark{width:34px;height:34px;flex:none;}
+  .brand-text{display:flex;flex-direction:column;line-height:1;}
+  .brand-text .hi{font-family:'Teko';font-size:22px;letter-spacing:0.02em;text-transform:uppercase;color:var(--offwhite);}
+  .brand-text .sub{font-family:'JetBrains Mono';font-size:9.5px;color:var(--glass);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{
+    font-family:'Teko';font-size:18px;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--aluminium);
+    position:relative;padding:4px 0;
+    transition:color .25s ease;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--marigold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover{color:var(--offwhite);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    font-family:'JetBrains Mono';font-size:12.5px;
+    color:var(--charcoal);background:var(--marigold);
+    padding:9px 16px;border-radius:var(--radius);
+    letter-spacing:0.02em;
+  }
+  .nav-cta:hover{background:#f0994a;}
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--charcoal);
+    color:var(--offwhite);
+    padding:150px 0 90px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(185,192,199,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(185,192,199,0.05) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 90%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'JetBrains Mono';font-size:12px;color:var(--glass);
+    letter-spacing:0.16em;text-transform:uppercase;margin-bottom:26px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--glass);}
+
+  .frame-stage{
+    position:relative;
+    padding:52px 34px;
+    max-width:820px;
+  }
+  .frame-bar{
+    position:absolute;
+    background:linear-gradient(180deg, var(--aluminium), var(--aluminium-dim));
+    opacity:0;
+  }
+  .frame-bar.top{top:0;left:0;right:0;height:6px;transform:translateY(-40px);animation:slideDown .7s .1s cubic-bezier(.2,.7,.3,1) forwards;}
+  .frame-bar.bottom{bottom:0;left:0;right:0;height:6px;transform:translateY(40px);animation:slideUp .7s .1s cubic-bezier(.2,.7,.3,1) forwards;}
+  .frame-bar.left{top:0;bottom:0;left:0;width:6px;transform:translateX(-40px);animation:slideRight .7s .3s cubic-bezier(.2,.7,.3,1) forwards;}
+  .frame-bar.right{top:0;bottom:0;right:0;width:6px;transform:translateX(40px);animation:slideLeft .7s .3s cubic-bezier(.2,.7,.3,1) forwards;}
+  @keyframes slideDown{to{opacity:1;transform:translateY(0);}}
+  @keyframes slideUp{to{opacity:1;transform:translateY(0);}}
+  @keyframes slideRight{to{opacity:1;transform:translateX(0);}}
+  @keyframes slideLeft{to{opacity:1;transform:translateX(0);}}
+
+  .glass-pane{
+    position:relative;
+    background:linear-gradient(155deg, rgba(111,183,201,0.10), rgba(111,183,201,0.02));
+    border:1px solid rgba(111,183,201,0.22);
+    padding:38px 8px 8px;
+    opacity:0;
+    animation:paneIn .6s .65s ease forwards;
+    overflow:hidden;
+  }
+  @keyframes paneIn{to{opacity:1;}}
+  .glass-pane::after{
+    content:"";position:absolute;top:-60%;left:-30%;width:40%;height:220%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,0.09), transparent);
+    transform:rotate(20deg);
+    animation:shimmer 5.5s 1.4s ease-in-out infinite;
+  }
+  @keyframes shimmer{
+    0%{left:-30%;}
+    35%{left:130%;}
+    100%{left:130%;}
+  }
+
+  .hero h1{
+    font-size:clamp(44px, 8vw, 84px);
+    color:var(--offwhite);
+  }
+  .hero h1 span{color:var(--marigold);}
+  .hero-tagline{
+    font-family:'Hind';font-weight:500;
+    font-size:clamp(16px,2.4vw,19px);
+    color:var(--aluminium);
+    max-width:520px;margin-top:16px;
+  }
+  .hero-meta{
+    display:flex;gap:26px;flex-wrap:wrap;
+    margin-top:22px;
+    font-family:'JetBrains Mono';font-size:12px;color:var(--glass);
+  }
+
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:44px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:var(--radius);
+    font-family:'Teko';font-size:19px;letter-spacing:0.04em;text-transform:uppercase;
+    transition:transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:var(--marigold);color:#181205;}
+  .btn-primary:hover{background:#f0994a;transform:translateY(-2px);}
+  .btn-ghost{border:1px solid rgba(185,192,199,0.4);color:var(--offwhite);}
+  .btn-ghost:hover{border-color:var(--glass);color:var(--glass);transform:translateY(-2px);}
+
+  /* ---------- SECTION LABELS ---------- */
+  .sec-head{margin-bottom:44px;}
+  .sec-eyebrow{
+    font-family:'JetBrains Mono';font-size:11.5px;color:var(--ink-soft);
+    letter-spacing:0.16em;text-transform:uppercase;
+    display:flex;align-items:center;gap:10px;margin-bottom:10px;
+  }
+  .sec-eyebrow::before{content:"";width:22px;height:1px;background:var(--marigold);}
+  .sec-head h2{font-size:clamp(30px,5vw,46px);color:var(--ink);}
+  .sec-head p{font-family:'Hind';color:var(--ink-soft);max-width:560px;margin-top:10px;font-size:15.5px;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:100px 0 90px;}
+  .svc-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:rgba(20,23,26,0.1);
+    border:1px solid rgba(20,23,26,0.12);
+  }
+  .svc-card{
+    background:var(--paper);
+    padding:32px 26px;
+    transition:background .25s ease;
+  }
+  .svc-card:hover{background:var(--offwhite);}
+  .svc-num{font-family:'JetBrains Mono';font-size:11px;color:var(--marigold);}
+  .svc-icon{width:38px;height:38px;margin:18px 0 16px;color:var(--ink);}
+  .svc-card h3{font-size:24px;color:var(--ink);letter-spacing:0.01em;}
+  .svc-card p{font-family:'Hind';font-size:14.5px;color:var(--ink-soft);margin-top:8px;line-height:1.55;}
+
+  /* ---------- WORK / PATTERNS STRIP ---------- */
+  .work{background:var(--charcoal);padding:90px 0;color:var(--offwhite);}
+  .work .sec-eyebrow{color:var(--aluminium);}
+  .work .sec-eyebrow::before{background:var(--glass);}
+  .work .sec-head h2{color:var(--offwhite);}
+  .work .sec-head p{color:var(--aluminium);}
+  .pattern-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .pattern-card{
+    background:var(--charcoal-2);
+    border:1px solid rgba(185,192,199,0.14);
+    padding:16px;
+  }
+  .pattern-swatch{
+    aspect-ratio:1/1.1;
+    border:3px solid var(--aluminium);
+    display:grid;
+    background:rgba(111,183,201,0.08);
+  }
+  .pattern-swatch.p2x2{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+  .pattern-swatch.p3x1{grid-template-columns:1fr 1fr 1fr;}
+  .pattern-swatch.p1x2{grid-template-rows:1fr 1fr;}
+  .pattern-swatch.psliding{grid-template-columns:1fr 1fr;}
+  .pattern-swatch > div{border:2px solid var(--aluminium);background:linear-gradient(155deg, rgba(111,183,201,0.16), transparent);}
+  .pattern-swatch.psliding > div:first-child{background:linear-gradient(155deg, rgba(226,132,31,0.14), transparent);}
+  .pattern-label{font-family:'Teko';font-size:18px;letter-spacing:0.03em;margin-top:12px;color:var(--offwhite);}
+  .pattern-sub{font-family:'JetBrains Mono';font-size:10.5px;color:var(--aluminium-dim);margin-top:2px;text-transform:uppercase;letter-spacing:0.08em;}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:100px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .about-copy p{font-family:'Hind';font-size:16.5px;line-height:1.8;color:var(--ink-soft);margin:0 0 18px;}
+  .about-copy strong{color:var(--ink);font-weight:600;}
+  .blessing{
+    font-family:'Teko';font-size:22px;color:var(--marigold);letter-spacing:0.03em;
+    margin-bottom:22px;
+  }
+  .stat-row{display:flex;gap:0;margin-top:30px;border-top:1px solid rgba(20,23,26,0.14);}
+  .stat{flex:1;padding:20px 18px 0;border-right:1px solid rgba(20,23,26,0.14);}
+  .stat:last-child{border-right:none;}
+  .stat .k{font-family:'Teko';font-size:32px;color:var(--ink);}
+  .stat .v{font-family:'JetBrains Mono';font-size:10.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+
+  .about-visual{position:relative;aspect-ratio:4/5;background:var(--charcoal);overflow:hidden;}
+  .about-visual svg{width:100%;height:100%;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--charcoal-2);padding:100px 0 0;color:var(--offwhite);}
+  .contact .sec-eyebrow{color:var(--aluminium);}
+  .contact .sec-eyebrow::before{background:var(--marigold);}
+  .contact .sec-head h2{color:var(--offwhite);}
+  .contact .sec-head p{color:var(--aluminium);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:0;border-top:1px solid rgba(185,192,199,0.16);}
+  .contact-info{padding:44px 0 60px;border-right:1px solid rgba(185,192,199,0.16);}
+  .info-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid rgba(185,192,199,0.1);}
+  .info-row:first-child{padding-top:0;}
+  .info-icon{width:22px;height:22px;flex:none;color:var(--marigold);margin-top:2px;}
+  .info-k{font-family:'JetBrains Mono';font-size:10.5px;color:var(--aluminium-dim);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;}
+  .info-v{font-family:'Hind';font-size:16px;color:var(--offwhite);line-height:1.5;}
+  .info-v a:hover{color:var(--glass);}
+  .contact-ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;}
+  .map-wrap{position:relative;padding:44px 0 0 44px;}
+  .map-frame{width:100%;height:100%;min-height:380px;border:1px solid rgba(185,192,199,0.2);filter:grayscale(0.3) contrast(1.05);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--charcoal);color:var(--aluminium-dim);padding:26px 0;margin-top:60px;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  footer .f-brand{font-family:'Teko';font-size:16px;color:var(--aluminium);letter-spacing:0.04em;}
+  footer .f-note{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:0.04em;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .nav-links{display:none;}
+    .svc-grid{grid-template-columns:1fr 1fr;}
+    .pattern-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;gap:36px;}
+    .about-visual{aspect-ratio:16/9;}
+    .contact-grid{grid-template-columns:1fr;}
+    .contact-info{border-right:none;border-bottom:1px solid rgba(185,192,199,0.16);}
+    .map-wrap{padding:44px 0 44px;}
+  }
+  @media (max-width: 560px){
+    .svc-grid{grid-template-columns:1fr;}
+    .pattern-grid{grid-template-columns:1fr 1fr;}
+    .stat-row{flex-wrap:wrap;}
+    .stat{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(20,23,26,0.14);padding-bottom:14px;margin-bottom:6px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#home" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <path d="M4 4H16V9H9V16H4V4Z" fill="#B9C0C7"/>
+        <path d="M36 36H24V31H31V24H36V36Z" fill="#B9C0C7"/>
+        <path d="M14 14H26V26H14V14Z" stroke="#E2841F" stroke-width="2"/>
+      </svg>
+      <span class="brand-text">
+        <span class="hi">श्रीराम ग्लास एण्ड एल्युमिनियम वर्क</span>
+        <span class="sub">Aluminium · Glass · Fabrication</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#home">होम</a>
+      <a href="#services">सेवाएं</a>
+      <a href="#work">हमारा काम</a>
+      <a href="#about">परिचय</a>
+      <a href="#contact">संपर्क</a>
+    </div>
+    <a class="nav-cta mono" href="tel:+917746856864">📞 77468-56864</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <span class="eyebrow">बकावाँ रोड़ · कानपुर, मध्य प्रदेश</span>
+
+    <div class="frame-stage">
+      <div class="frame-bar top"></div>
+      <div class="frame-bar bottom"></div>
+      <div class="frame-bar left"></div>
+      <div class="frame-bar right"></div>
+      <div class="glass-pane">
+        <h1>श्रीराम ग्लास <span>एण्ड</span><br>एल्युमिनियम वर्क</h1>
+      </div>
+    </div>
+
+    <p class="hero-tagline">घर और दुकान के लिए एल्युमिनियम फ्रेम, ग्लास फिटिंग और फैब्रिकेशन का सटीक व भरोसेमंद काम — नाप से लेकर फिटिंग तक, एक ही जगह।</p>
+
+    <div class="hero-meta">
+      <span>प्रो. संदीप कर्मा</span>
+      <span>·</span>
+      <span>मो. 77468-56864</span>
+      <span>·</span>
+      <span>॥ श्री विश्वकर्माय नमः ॥</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/917746856864?text=Namaste%2C%20mujhe%20aluminium%2Fglass%20kaam%20ke%20baare%20me%20jaankari%20chahiye" target="_blank" rel="noopener">व्हाट्सऐप पर पूछें</a>
+      <a class="btn btn-ghost" href="tel:+917746856864">अभी कॉल करें</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">हमारी सेवाएं</span>
+      <h2>नाप से फिटिंग तक</h2>
+      <p>हर तरह के एल्युमिनियम और ग्लास के काम — घर, दुकान और ऑफिस के लिए।</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <span class="svc-num mono">01</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="28" height="28"/><line x1="20" y1="6" x2="20" y2="34"/><line x1="6" y1="20" x2="34" y2="20"/></svg>
+        <h3>एल्युमिनियम फ्रेम</h3>
+        <p>विंडो व डोर फ्रेम — मजबूत जोड़ और सटीक नाप के साथ तैयार।</p>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num mono">02</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="4" width="24" height="32" rx="1"/><line x1="8" y1="14" x2="32" y2="14" stroke-dasharray="2 2"/></svg>
+        <h3>ग्लास फिटिंग</h3>
+        <p>विंडो, दरवाज़े और पार्टीशन में साफ़-सुथरी ग्लास फिटिंग।</p>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num mono">03</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 34V14L20 6L35 14V34"/><line x1="5" y1="34" x2="35" y2="34"/><rect x="16" y="22" width="8" height="12"/></svg>
+        <h3>दुकान का फ्रंट</h3>
+        <p>शोकेस, शटर फ्रेम और शॉप फ्रंट — आकर्षक और टिकाऊ डिज़ाइन में।</p>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num mono">04</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="30" x2="36" y2="30"/><line x1="8" y1="30" x2="8" y2="12"/><line x1="16" y1="30" x2="16" y2="12"/><line x1="24" y1="30" x2="24" y2="12"/><line x1="32" y1="30" x2="32" y2="12"/><line x1="4" y1="12" x2="36" y2="12"/></svg>
+        <h3>रेलिंग व ग्रिल</h3>
+        <p>बालकनी, सीढ़ी और छत के लिए एल्युमिनियम रेलिंग व ग्रिल वर्क।</p>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num mono">05</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="6" width="13" height="28"/><rect x="22" y="6" width="13" height="28"/></svg>
+        <h3>पार्टीशन वर्क</h3>
+        <p>ऑफिस और दुकान के लिए एल्युमिनियम व ग्लास पार्टीशन।</p>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num mono">06</span>
+        <svg class="svc-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6L34 34M6 34L34 6"/><circle cx="20" cy="20" r="15"/></svg>
+        <h3>कस्टम फिटिंग</h3>
+        <p>आपकी जगह पर जाकर सटीक नाप और उसी अनुसार फिटिंग।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">डिज़ाइन विकल्प</span>
+      <h2>पैटर्न जो हम बनाते हैं</h2>
+      <p>अपनी जगह और ज़रूरत के हिसाब से पैनल का बंटवारा चुनें — बाकी नाप और फिटिंग हम संभालेंगे।</p>
+    </div>
+    <div class="pattern-grid">
+      <div class="pattern-card reveal">
+        <div class="pattern-swatch p2x2"><div></div><div></div><div></div><div></div></div>
+        <div class="pattern-label">4-पैनल विंडो</div>
+        <div class="pattern-sub">2 × 2 ग्रिड</div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pattern-swatch p3x1"><div></div><div></div><div></div></div>
+        <div class="pattern-label">3-पैनल विंडो</div>
+        <div class="pattern-sub">1 × 3 ग्रिड</div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pattern-swatch psliding"><div></div><div></div></div>
+        <div class="pattern-label">स्लाइडिंग डोर</div>
+        <div class="pattern-sub">2-ट्रैक</div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pattern-swatch p1x2"><div></div><div></div></div>
+        <div class="pattern-label">फिक्स्ड + वेंटिलेटर</div>
+        <div class="pattern-sub">1 × 2 ग्रिड</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <div class="sec-eyebrow">हमारा परिचय</div>
+      <p class="blessing">॥ श्री विश्वकर्माय नमः ॥</p>
+      <p><strong>श्रीराम ग्लास एण्ड एल्युमिनियम वर्क</strong> बकावाँ रोड़, कानपुर में स्थित एक भरोसेमंद फैब्रिकेशन इकाई है। यहाँ हर प्रकार के एल्युमिनियम और ग्लास फिटिंग का काम किया जाता है — घर की खिड़की-दरवाज़ों से लेकर दुकान के फ्रंट तक।</p>
+      <p>हर काम सटीक नाप, मज़बूत जोड़ और साफ़ फिनिश के साथ किया जाता है, ताकि आपको बार-बार मरम्मत की ज़रूरत न पड़े। छोटे घरेलू काम से लेकर बड़े दुकान व ऑफिस फिटआउट तक — हर साइज़ का काम स्वीकार किया जाता है।</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="k">नाप</div>
+          <div class="v mono">On-site Survey</div>
+        </div>
+        <div class="stat">
+          <div class="k">फिटिंग</div>
+          <div class="v mono">By Our Team</div>
+        </div>
+        <div class="stat">
+          <div class="k">बिलिंग</div>
+          <div class="v mono">Clear & Itemised</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="500" fill="#171b1f"/>
+        <g stroke="#B9C0C7" stroke-width="4" fill="none">
+          <rect x="40" y="40" width="320" height="420"/>
+          <line x1="200" y1="40" x2="200" y2="460"/>
+          <line x1="40" y1="250" x2="360" y2="250"/>
+        </g>
+        <rect x="44" y="44" width="152" height="202" fill="#6fb7c9" opacity="0.14"/>
+        <rect x="204" y="44" width="152" height="202" fill="#e2841f" opacity="0.12"/>
+        <rect x="44" y="254" width="152" height="202" fill="#e2841f" opacity="0.08"/>
+        <rect x="204" y="254" width="152" height="202" fill="#6fb7c9" opacity="0.16"/>
+        <g stroke="#B9C0C7" stroke-width="1" opacity="0.35">
+          <line x1="70" y1="70" x2="70" y2="220"/>
+          <line x1="330" y1="70" x2="330" y2="220"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">संपर्क करें</span>
+      <h2>काम शुरू करें</h2>
+      <p>अपना नाप बताएं या दुकान पर आकर दिखाएं — जल्द जवाब मिलेगा।</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
+          <div>
+            <div class="info-k">पता</div>
+            <div class="info-v">मध्य प्रदेश ग्रामीण बैंक के पास,<br>बकावाँ रोड़, कानपुर, मध्य प्रदेश</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6-4 3z"/></svg>
+          <div>
+            <div class="info-k">फ़ोन / व्हाट्सऐप</div>
+            <div class="info-v"><a href="tel:+917746856864">77468-56864</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="1"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+          <div>
+            <div class="info-k">समय</div>
+            <div class="info-v">सोमवार – शनिवार · सुबह 9 बजे से शाम 7 बजे तक</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 4v4M16 4v4"/></svg>
+          <div>
+            <div class="info-k">मालिक</div>
+            <div class="info-v">प्रो. संदीप कर्मा</div>
+          </div>
+        </div>
+        <div class="contact-ctas">
+          <a class="btn btn-primary" href="https://wa.me/917746856864" target="_blank" rel="noopener">व्हाट्सऐप करें</a>
+          <a class="btn btn-ghost" href="tel:+917746856864">कॉल करें</a>
+        </div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe class="map-frame" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Madhya+Pradesh+Gramin+Bank+Bakawa+Road+Kanpur&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="f-brand">श्रीराम ग्लास एण्ड एल्युमिनियम वर्क</span>
+    <span class="f-note mono">BAKAWA ROAD · KANPUR, MP</span>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
